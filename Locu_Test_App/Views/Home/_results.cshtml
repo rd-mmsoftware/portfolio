@@ -1,0 +1,21 @@
+﻿<!-- ko with: search -->
+<div data-bind="visible: haveResults">
+    <h2>Search Results</h2>
+    <h4></h4>
+    <hr />
+    <table style="width: 90%;">
+        <tbody data-bind="foreach: results">
+            <tr>
+                <td><a data-bind="text: name, click: $parent.details" ></a></td>
+                <td data-bind="text: phone"></td>
+                <td data-bind="text: street_address"></td>
+                <td data-bind="text: postal_code"></td>
+                <td data-bind="text: locality"></td>
+                <td data-bind="text: region"></td>
+                <td><input id="id" type="hidden" data-bind="value: id" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<!-- /ko -->

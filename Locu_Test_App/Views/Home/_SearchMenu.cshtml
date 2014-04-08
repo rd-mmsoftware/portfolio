@@ -1,0 +1,45 @@
+﻿<!-- ko with: searchMenu -->
+<div>
+    <h2>Search for menu items</h2>
+    <form class="form-horizontal" role="form">
+        <h4></h4>
+        <hr />
+        <div class="form-group">
+            <label for="Name" class="col-md-2 control-label">Name</label>
+            <div class="col-md-10">
+                <input type="text" id="Name" data-bind="value: name" class="form-control" />
+            </div>
+        </div>
+       <div class="form-group">
+            <label for="Description" class="col-md-2 control-label">Description</label>
+            <div class="col-md-10">
+                <input type="text" id="Description" data-bind="value: description" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Price" class="col-md-2 control-label">Price</label>
+            <div class="col-md-10">
+                <input type="text" id="Price" data-bind="value: price__lte" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Zip" class="col-md-2 control-label">Zip</label>
+            <div class="col-md-10">
+                <input type="text" id="Zip" data-bind="value: postal_code" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Distance" class="col-md-2 control-label">Distance</label>
+            <div class="col-md-10">
+                <input type="text" id="Distance" data-bind="value: distance" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" data-bind="click: search, disable: searching">search</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+<!-- /ko -->

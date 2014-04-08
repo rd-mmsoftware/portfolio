@@ -1,0 +1,23 @@
+﻿<!-- ko with: venue -->
+<div data-bind="visible: loading">Loading...</div>
+<div data-bind="visible: !loading()">
+    
+    
+    <h2>Venue Details</h2>
+    <label data-bind="text:name"></label>
+
+    <table style="width: 90%;">
+
+        <tbody data-bind="with: open_hours">
+            <tr><td><label>Hours</label></td></tr>
+            <tr>
+                <td>Monday: <label data-bind="text: Monday"> </label></td>
+            </tr>
+            <tr>
+                <td>Tuesday <label data-bind="text: Tuesday"> </label></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<!-- /ko -->

@@ -1,0 +1,39 @@
+﻿<!-- ko with: search -->
+<div>
+    <h2>Search for restaurants</h2>
+    <form class="form-horizontal" role="form">
+        <h4></h4>
+        <hr />
+        <div class="form-group">
+            <label for="Cuisine" class="col-md-2 control-label">Cuisine</label>
+            <div class="col-md-10">
+                <input type="text" id="Cuisine" data-bind="value: cuisine" class="form-control" />
+            </div>
+        </div>
+       <div class="form-group">
+            <label for="City" class="col-md-2 control-label">City</label>
+            <div class="col-md-10">
+                <input type="text" id="City" data-bind="value: locality" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="State" class="col-md-2 control-label">State</label>
+            <div class="col-md-10">
+                <input type="text" id="State" data-bind="value: region" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Zip" class="col-md-2 control-label">Zip</label>
+            <div class="col-md-10">
+                <input type="text" id="Zip" data-bind="value: postal_code" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" data-bind="click: search, disable: searching">search</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+<!-- /ko -->

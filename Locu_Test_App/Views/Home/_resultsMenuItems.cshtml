@@ -1,0 +1,18 @@
+﻿<!-- ko with: searchMenu -->
+<div data-bind="visible: haveResults">
+    <h2>Search Results</h2>
+    <h4></h4>
+    <hr />
+    <table style="width: 90%;">
+        <tbody data-bind="foreach: results">
+            <tr>
+                <td><a data-bind="text: name, click: $parent.details" ></a></td>
+                <td data-bind="text: price"></td>
+                <td data-bind="text: description"></td>
+                <td data-bind="text: venue.name"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<!-- /ko -->

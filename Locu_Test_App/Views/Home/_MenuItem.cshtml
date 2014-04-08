@@ -1,0 +1,13 @@
+﻿<!-- ko with: menuItem -->
+<div data-bind="visible: loading">Loading...</div>
+<div data-bind="visible: !loading()">
+<div data-bind="if: !loading()">   
+    
+    <h2>Menu Item Details</h2>
+    <label data-bind="text:name"></label>
+    <label data-bind="text:description"></label>
+    <label data-bind="text:price"></label>
+
+</div>
+    </div>
+<!-- /ko -->

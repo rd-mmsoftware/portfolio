@@ -1,0 +1,33 @@
+﻿<!-- ko with: place -->
+<div >
+    <h2>Save your location</h2>
+    <form class="form-horizontal" role="form">
+        <h4></h4>
+        <hr />
+       <div class="form-group">
+            <label for="AddressLine1" class="col-md-2 control-label">Address</label>
+            <div class="col-md-10">
+                <input type="text" id="AddressLine1" data-bind="value: addressLine1" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="City" class="col-md-2 control-label">City</label>
+            <div class="col-md-10">
+                <input type="text" id="City" data-bind="value: city" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Zip" class="col-md-2 control-label">Zip</label>
+            <div class="col-md-10">
+                <input type="text" id="Zip" data-bind="value: postal_code" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default" data-bind="click: save, disable: saving">Save</button>
+            </div>
+        </div>
+        
+    </form>
+    </div>
+    <!-- /ko -->

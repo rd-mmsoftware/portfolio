@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+    Response.Headers["X-UA-Compatible"] = "IE=10";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My ASP.NET Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div data-bind="visible: loading">Loading...</div>
+    <div style="display: none" data-bind="visible: true" class="container body-content">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand" data-bind="click: navigateToHome">What's for Lunch?</a>
+                </div>
+                <div  class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" data-bind="click: navigateToHome">Home</a></li>
+                        <li><a href="#" data-bind="click: navigateToPlace">Location</a></li>
+                         <li><a href="#" data-bind="click: navigateToSearch">Search Restaurants</a></li>
+                        <li><a href="#" data-bind="click: navigateToSearchMenu">Search Menus</a></li>
+
+                        <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
+                    </ul>
+                 
+                </div>
+            </div>
+        </div>
+
+        <div data-bind="foreach: errors" class="padding-error">
+            <p class="text-danger" data-bind="text: $data"></p>
+        </div>
+        @Html.Partial("_Home")
+        @Html.Partial("_Location")
+        @Html.Partial("_searchRestaurant")
+        @Html.Partial("_results")
+        @Html.Partial("_searchMenu")
+        @Html.Partial("_resultsMenuItems")
+        @Html.Partial("_venue")
+        @Html.Partial("_menuItem")
+        
+        <hr />
+        <footer>
+            <a href="http://locu.com"><img height="25" width="155" src="http://locu.com/static/images/dev/poweredby-color@2x.png" alt="Powered by Locu" /></a>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

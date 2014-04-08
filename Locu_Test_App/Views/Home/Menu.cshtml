@@ -1,0 +1,59 @@
+﻿@model Locu_Test_App.Models.VenueDataModel 
+
+@{
+    Layout = null;
+    Response.Headers["X-UA-Compatible"] = "IE=10";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My ASP.NET Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div data-bind="visible: loading">Loading...</div>
+    <div style="display: none" data-bind="visible: true" class="container body-content">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand" data-bind="click: navigateToHome">What's for Lunch?</a>
+                </div>
+                <div  class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" data-bind="click: navigateToHome">Home</a></li>
+                        <li><a href="#" data-bind="click: navigateToPlace">Location</a></li>
+                        <li><a href="#" data-bind="click: navigateToSearch">Search</a></li>
+                        <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
+                    </ul>
+                   </div>
+            </div>
+        </div>
+        @Model.VenueId
+        <div style="width: 600px; padding: 30px 50px 30px 50px; text-align: center; -webkit-box-shadow: inset 1px 1px 10px 0px rgba(0, 0, 0, 0.3); -moz-box-shadow: inset 1px 1px 10px 0px rgba(0, 0, 0, 0.3); box-shadow: inset 1px 1px 10px 0px rgba(0, 0, 0, 0.3); -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;">
+            <script type="text/javascript" src="https://widget.locu.com/menuwidget/locu.widget.developer.v2.0.js?widget-key=4772918830db510f92175a3961faae908daebb23&venue-id=@Model.VenueId"></script>
+        </div>
+        <div style="width: 600px; padding: 30px 50px 30px 50px; text-align: center; -webkit-box-shadow: inset 1px 1px 10px 0px rgba(0, 0, 0, 0.3); -moz-box-shadow: inset 1px 1px 10px 0px rgba(0, 0, 0, 0.3); box-shadow: inset 1px 1px 10px 0px rgba(0, 0, 0, 0.3); -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;">
+            <script id="-locu-widget-auto" type="text/javascript" src="https://widget.locu.com/menuwidget/locu.widget.developer.v2.0.js?name=Fictitious+Foods&address=1+cambridge+center&locality=Cambridge&region=MA&postal-code=02142&country=united+states&merchant-url=http%3A%2F%2Ffictitious-foods.com&script-id=-locu-widget-auto&widget-key=4772918830db510f92175a3961faae908daebb23"></script>
+        </div>
+        <hr />
+        <footer>
+            <a href="http://locu.com"><img height="25" width="155" src="http://locu.com/static/images/dev/poweredby-color@2x.png" alt="Powered by Locu" /></a>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
